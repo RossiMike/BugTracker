@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Bug Registration</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h3>Bug Directory</h3>
+        <hr>
+
+        <p class="h4 mb-4">Save Bug</p>
+
+        <form action="#" th:action="@{/bugs/save}"
+                         th:object="${bug}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="text" th:field="*{bug_name}"
+                   class="form-control mb-4 w-25" placeholder="Bug name">
+
+            <input type="text" th:field="*{bug_description}"
+                   class="form-control mb-4 w-25" placeholder="Description...">
+
+            <input type="text" th:field="*{reporter}"
+                   class="form-control mb-4 w-25" placeholder="John">
+            
+            <input type="text" th:field="*{date_added}"
+                    class="form-control mb-4 w-25" placeholder="23">
+
+            <input type="text" th:field="*{date_resolved}"
+                    class="form-control mb-4 w-25" placeholder="23">
+
+            <input type="text" th:field="*{severity}"
+                    class="form-control mb-4 w-25" placeholder="1-7">
+
+            <button type="submit" class="btn btn-info col-2">Save</button>
+
+        </form>
+
+        <hr>
+        <a th:href="@{/bugs/list}">Back to Bugs List</a>
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
